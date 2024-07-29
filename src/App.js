@@ -3,10 +3,13 @@ import NavBar from './components/navBar/NavBar';
 
 function App() {
   return (
-    <div className="App">
-    <NavBar />
-     deliver food order app
-    </div>
+      <div className="App">
+          <NavBar />
+          <div className="main">
+              deliver food order app
+              {/*FIXME: add router dom here  ->HashRouter*/}
+          </div>
+      </div>
   );
 }
 
