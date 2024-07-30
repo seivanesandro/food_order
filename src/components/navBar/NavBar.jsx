@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logo.png';
 
 import { TbHome } from 'react-icons/tb';
 import { BiFoodMenu } from 'react-icons/bi';
@@ -10,8 +10,21 @@ import { BiFoodMenu } from 'react-icons/bi';
 import { IoMdInformationCircleOutline } from 'react-icons/io';
 import { MdOutlinePhoneInTalk } from 'react-icons/md';
 
+import { NavLink } from 'react-router-dom';
 
+import styled from 'styled-components';
 
+const StyleImg = styled.img`
+    width: 260px !important;
+    height: 100px !important;
+    &:hover {
+        cursor: pointer !important;
+    }
+    @media only screen and (max-width: 320px) {
+        width: 200px !important;
+        height: 90px !important;
+    }
+`;
 
 function OffcanvasExample() {
     return (
@@ -20,17 +33,30 @@ function OffcanvasExample() {
                 <Navbar
                     key={expand}
                     expand={expand}
+                    sticky="top"
                     className="bg-body-tertiary mb-3bg-dark mb-auto color-light shadow py-4"
                     data-bs-theme="dark"
                 >
                     <Container fluid>
-                        <Navbar.Brand href="#">
-                            <img
-                                src={logo}
-                                alt="app for deliver food order"
-                                className="logo"
+                        <Navbar.Brand>
+                            <NavLink
+                                to="/"
                                 title="go to home"
-                            />
+                                style={{
+                                    outline:
+                                        'none',
+                                    border: 'none',
+                                    boxShadow:
+                                        'none'
+                                }}
+                            >
+                                <StyleImg
+                                    src={logo}
+                                    alt="app for deliver food order"
+                                    className="logo-img"
+                                    title="go to home"
+                                />
+                            </NavLink>
                         </Navbar.Brand>
                         <Navbar.Toggle
                             aria-controls={`offcanvasNavbar-expand-${expand}`}
@@ -44,8 +70,11 @@ function OffcanvasExample() {
                             id={`offcanvasNavbar-expand-${expand}`}
                             aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
                             placement="start"
-        
                             data-bs-theme="dark"
+                            style={{
+                                opacity: 0.9,
+                                paddingTop: '30px'
+                            }}
                         >
                             <Offcanvas.Header
                                 closeButton
@@ -57,11 +86,25 @@ function OffcanvasExample() {
                                     app
                                 </Offcanvas.Title>
                             </Offcanvas.Header>
-                            <Offcanvas.Body>
-                                <Nav className="justify-content-center flex-grow-1 pe-5 gap-5">
-                                    <Nav.Link
-                                        href="#action1"
-                                        className="d-flex flex-row align-items-center justify-content-center gap-1 mx-5"
+                            <Offcanvas.Body className="navoffcanvas">
+                                <Nav className="justify-content-center text-center pe-5 gap-5">
+                                    <NavLink
+                                        to="/"
+                                        className={({
+                                            isActive
+                                        }) =>
+                                            isActive
+                                                ? 'active nav-link  d-flex flex-row align-items-start justify-content-center gap-1 mx-5'
+                                                : 'nav-link font-weight-bolder d-flex flex-row align-items-start justify-content-center gap-1 mx-5'
+                                        }
+                                        title="go to home"
+                                        style={{
+                                            outline:
+                                                'none',
+                                            border: 'none',
+                                            boxShadow:
+                                                'none'
+                                        }}
                                     >
                                         <TbHome
                                             size={
@@ -69,10 +112,24 @@ function OffcanvasExample() {
                                             }
                                         />
                                         Home
-                                    </Nav.Link>
-                                    <Nav.Link
-                                        href="#action2"
-                                        className="d-flex flex-row align-items-center justify-content-center gap-1 mx-5"
+                                    </NavLink>
+                                    <NavLink
+                                        to="/menu"
+                                        className={({
+                                            isActive
+                                        }) =>
+                                            isActive
+                                                ? 'active nav-link font-weight-bolder d-flex flex-row align-items-start justify-content-center gap-1 mx-5'
+                                                : 'nav-link font-weight-bolder d-flex flex-row align-items-start justify-content-center gap-1 mx-5'
+                                        }
+                                        title="go to Menu"
+                                        style={{
+                                            outline:
+                                                'none',
+                                            border: 'none',
+                                            boxShadow:
+                                                'none'
+                                        }}
                                     >
                                         <BiFoodMenu
                                             size={
@@ -80,10 +137,24 @@ function OffcanvasExample() {
                                             }
                                         />
                                         Menu
-                                    </Nav.Link>
-                                    <Nav.Link
-                                        href="#action3"
-                                        className="d-flex flex-row align-items-center justify-content-center gap-1 mx-5"
+                                    </NavLink>
+                                    <NavLink
+                                        to="/about"
+                                        className={({
+                                            isActive
+                                        }) =>
+                                            isActive
+                                                ? 'active nav-link font-weight-bolder d-flex flex-row align-items-start justify-content-center gap-1 mx-5'
+                                                : 'nav-link font-weight-bolder d-flex flex-row align-items-start justify-content-center gap-1 mx-5'
+                                        }
+                                        title="go to About"
+                                        style={{
+                                            outline:
+                                                'none',
+                                            border: 'none',
+                                            boxShadow:
+                                                'none'
+                                        }}
                                     >
                                         <IoMdInformationCircleOutline
                                             size={
@@ -91,10 +162,24 @@ function OffcanvasExample() {
                                             }
                                         />
                                         About
-                                    </Nav.Link>
-                                    <Nav.Link
-                                        href="#action4"
-                                        className="d-flex flex-row align-items-center justify-content-center gap-1 mx-5"
+                                    </NavLink>
+                                    <NavLink
+                                        to="/contact"
+                                        className={({
+                                            isActive
+                                        }) =>
+                                            isActive
+                                                ? 'active nav-link font-weight-bolder d-flex flex-row align-items-start justify-content-center gap-1 mx-5'
+                                                : 'nav-link font-weight-bolder d-flex flex-row align-items-start justify-content-center gap-1 mx-5'
+                                        }
+                                        title="go to Contact"
+                                        style={{
+                                            outline:
+                                                'none',
+                                            border: 'none',
+                                            boxShadow:
+                                                'none'
+                                        }}
                                     >
                                         <MdOutlinePhoneInTalk
                                             size={
@@ -102,7 +187,7 @@ function OffcanvasExample() {
                                             }
                                         />
                                         Contact
-                                    </Nav.Link>
+                                    </NavLink>
                                 </Nav>
                             </Offcanvas.Body>
                         </Navbar.Offcanvas>
