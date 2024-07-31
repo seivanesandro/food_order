@@ -15,15 +15,12 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyleImg = styled.img`
-    width: 260px !important;
-    height: 100px !important;
+    width: 200px !important;
+    height: 48px !important;
     &:hover {
         cursor: pointer !important;
     }
-    @media only screen and (max-width: 320px) {
-        width: 200px !important;
-        height: 90px !important;
-    }
+
 `;
 
 function OffcanvasExample() {
@@ -34,7 +31,7 @@ function OffcanvasExample() {
                     key={expand}
                     expand={expand}
                     sticky="top"
-                    className="bg-body-tertiary mb-3bg-dark mb-auto color-light shadow py-4"
+                    className="bg-body-tertiary mb-3bg-dark mb-auto color-light shadow py-1"
                     data-bs-theme="dark"
                 >
                     <Container fluid>
