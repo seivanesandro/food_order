@@ -7,7 +7,7 @@
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    font-optical-sizing: auto;
+    font-optical-sizing: none;
     font-weight: 400;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
@@ -76,6 +76,12 @@ p{
     font-weight: 700 !important;
 }
 
+/*footer*/
+.icon-style:hover{
+    color: rgb(70, 242, 248) !important;
+    text-shadow: 0 0 0.1rem black;
+}
+
 /*home page*/
 
 
@@ -109,6 +115,10 @@ p{
 }
 
 @media only screen and (max-width: 430px) {
+    /*footer*/
+        .icon-style {
+            width: 30px !important;
+        }
     /*home*/
         .home {
             height: 94.8vh !important;
@@ -116,6 +126,10 @@ p{
 }
 
 @media only screen and (max-width: 425px) {
+    /*footer*/
+        .icon-style {
+            width: 30px !important;
+        }
     /*home*/
         .home {
             height: 94.8vh !important;
@@ -134,7 +148,10 @@ p{
             margin: 0;
             letter-spacing: 0.1rem;
         }
-    
+         /*footer*/
+         .icon-style {
+             width: 30px !important;
+         }
     /*home*/
         .home {
             height: 94.8vh !important;
@@ -142,6 +159,11 @@ p{
 }
 
 @media only screen and (max-width: 320px) {
+    /*footer*/
+    .icon-style {
+            width: 30px !important;
+        }
+    
     /*home*/
         .home {
             height: 94.8vh !important;

@@ -31,7 +31,7 @@ function OffcanvasExample() {
                     key={expand}
                     expand={expand}
                     sticky="top"
-                    className="bg-body-tertiary mb-3bg-dark mb-auto color-light shadow py-1"
+                    className="bg-body-tertiary mb-3 bg-dark mb-auto color-light shadow py-1"
                     data-bs-theme="dark"
                 >
                     <Container fluid>
@@ -91,7 +91,7 @@ function OffcanvasExample() {
                                             isActive
                                         }) =>
                                             isActive
-                                                ? 'active nav-link  d-flex flex-row align-items-start justify-content-center gap-1 mx-5'
+                                                ? 'active nav-link d-flex flex-row align-items-start justify-content-center gap-1 mx-5'
                                                 : 'nav-link font-weight-bolder d-flex flex-row align-items-start justify-content-center gap-1 mx-5'
                                         }
                                         title="go to home"
