@@ -56,11 +56,12 @@ const responsivePoints = {
     mobileM: '375px',
     mobileG: '425px',
     iphone14: '430px',
-    tablet: '768px',
+    tablet: '1230px',
     portatil: '1024px',
-    portatilL: '1440px',
-    fourk: '2560px'
+    portatilL: '1232px',
+    fourk: '1760px'
 };
+
 
 export const devices = {
     mobileP: `( max-width: ${responsivePoints.mobileP} )`,

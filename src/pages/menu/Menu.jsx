@@ -1,67 +1,76 @@
 import React from 'react';
 // PropTypes from 'prop-types'
+import {MenuList} from '../../data/MenuList';
 import CardMenu from '../../components/menuItems/MenuItems';
 import styled, { keyframes } from 'styled-components';
 import { devices } from '../../utils/constantes';
 
+const Show = keyframes`
+    0%{
+        opacity:0;
+    }
+    50%{
+        opacity:0.5;
+    }
+
+    100%{
+        opacity:1;
+    }
+`;
+
+
 const StyledMenu = styled.div`
     /* max-width: 92%;
     width: 89%; */
-    margin: 10rem auto 25rem auto;
+    margin: 3rem auto 13rem auto;
+    height: auto;
 `;
-
 
 const ContainerMenu = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5rem;
+    gap: 3rem;
 
-    @media only screen and (${devices.fourk}) {
-    }
-    @media only screen and (${devices.portatilL}) {
-    }
-    @media only screen and (${devices.portatil}) {
-    }
-    @media only screen and (${devices.tablet}) {
-    }
-    @media only screen and (${devices.iphone14}) {
-    }
-    @media only screen and (${devices.mobileG}) {
-    }
-    @media only screen and (${devices.mobileM}) {
-    }
-    @media only screen and (${devices.mobileP}) {
-    }
 `;
 const MenuTitle = styled.h2`
-text-align: left;
-
+    text-align: start;
 `;
 const ContainerMenuList = styled.div`
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    gap: 2rem;
+    gap: 5rem;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 5rem;
+    animation: ${Show} 1.5s ease-in;
 
     @media only screen and (${devices.fourk}) {
+        margin-left: 5rem;
     }
     @media only screen and (${devices.portatilL}) {
+        margin-left: 8rem;
     }
     @media only screen and (${devices.portatil}) {
+        margin-left: 4rem;
     }
     @media only screen and (${devices.tablet}) {
+        margin-left: 6rem;
     }
     @media only screen and (${devices.iphone14}) {
+        margin-left: 5rem;
     }
     @media only screen and (${devices.mobileG}) {
+        margin-left: 5rem;
     }
     @media only screen and (${devices.mobileM}) {
+        margin-left: 3rem;
     }
     @media only screen and (${devices.mobileP}) {
+        margin-left: 1.5rem;
     }
 `;
-
 
 const Menu = props => {
     return (
@@ -72,12 +81,25 @@ const Menu = props => {
                         Menu
                     </MenuTitle>
                     <ContainerMenuList className="menu-list">
-                        <CardMenu />
-                        <CardMenu />
-                        <CardMenu />
-                        <CardMenu />
-                        <CardMenu />
-                        <CardMenu />
+                        {MenuList.map((item)=>{
+                            return (
+                                <CardMenu
+                                        key={
+                                            item.id
+                                        }
+                                        imgurl={
+                                            item.image
+                                        }
+                                        cardtitle={
+                                            item.name
+                                        }
+                                        cardtext={
+                                            item.price
+                                        }
+                                    />
+                            );
+                            
+                        })}
                     </ContainerMenuList>
                 </ContainerMenu>
             </StyledMenu>

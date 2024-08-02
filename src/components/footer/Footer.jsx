@@ -24,19 +24,20 @@ const StyleFooter = styled.div`
     @media only screen and (${devices.fourk}) {
         height: 11vh !important;
     }
-    @media only screen and (${devices.portatilL}) {
-    }
-    @media only screen and (${devices.portatil}) {
-    }
     @media only screen and (${devices.tablet}) {
+        display: none;
     }
     @media only screen and (${devices.iphone14}) {
+        display: none;
     }
     @media only screen and (${devices.mobileG}) {
+        display: none;
     }
     @media only screen and (${devices.mobileM}) {
+        display: none;
     }
     @media only screen and (${devices.mobileP}) {
+        display: none;
     }
 `;
 const ContainerFooter = styled.div`

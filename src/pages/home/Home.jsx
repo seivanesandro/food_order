@@ -73,6 +73,7 @@ const ContainerHome = styled.div`
 `;
 
 const TitleHome = styled.h2`
+text-align: left;
     color: #fff;
     font-size: 6rem;
     animation: ${Show} 1.3s ease-in;
