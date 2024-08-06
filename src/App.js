@@ -6,11 +6,10 @@ import Menu from './pages/menu/Menu';
 import About from './pages/about/About';
 import Contact from './pages/contact/Contact';
 
-import { FaInstagram } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import { FaFacebook } from "react-icons/fa6";
-import { FaLinkedin } from "react-icons/fa";
-
+import { FaInstagram } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
+import { FaFacebook } from 'react-icons/fa6';
+import { FaLinkedin } from 'react-icons/fa';
 
 import {
     HashRouter,
@@ -20,8 +19,8 @@ import {
 import Footer from './components/footer/Footer';
 
 function App() {
-     const today = new Date();
-  const year = today.getFullYear();
+    const today = new Date();
+    const year = today.getFullYear();
     return (
         <div className="App">
             <HashRouter>
@@ -48,6 +47,7 @@ function App() {
                         element={<Contact />}
                     />
                 </Routes>
+
                 <Footer
                     instagram={
                         <FaInstagram

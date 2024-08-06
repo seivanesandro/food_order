@@ -20,7 +20,6 @@ const StyleImg = styled.img`
     &:hover {
         cursor: pointer !important;
     }
-
 `;
 
 function OffcanvasExample() {

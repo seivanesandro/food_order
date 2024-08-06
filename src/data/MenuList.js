@@ -37,7 +37,13 @@ export const MenuList = [
         price: 450
     },
     {
-        id:5,
+        id: 5,
+        name: 'Rajasthani Thali',
+        image: Rajasthani,
+        price: 499
+    },
+    {
+        id: 6,
         name: 'Rajasthani Thali',
         image: Rajasthani,
         price: 499

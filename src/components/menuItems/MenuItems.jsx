@@ -15,6 +15,10 @@ function CardMenu({
                 <Card.Img
                     variant="top"
                     src={imgurl}
+                    style={{
+                        borderBottom:
+                            '1px solid #ccc'
+                    }}
                 />
                 <Card.Body className="d-flex flex-column justify-content-start gap-4">
                     <Card.Title
@@ -34,7 +38,10 @@ function CardMenu({
                     >
                         {cardtext}€
                     </Card.Text>
-                    <Button variant="primary">
+                    <Button
+                        variant="dark"
+                        disabled
+                    >
                         order now
                     </Button>
                 </Card.Body>

@@ -1,8 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 //import PropTypes from 'prop-types'
-import styled, { keyframes } from 'styled-components';
-import banner from '../../assets/banner.jpg'
+import styled, {
+    keyframes
+} from 'styled-components';
+import banner from '../../assets/banner.jpg';
 import { devices } from '../../utils/constantes';
 
 const Show = keyframes`
@@ -73,7 +75,7 @@ const ContainerHome = styled.div`
 `;
 
 const TitleHome = styled.h2`
-text-align: left;
+    text-align: left;
     color: #fff;
     font-size: 6rem;
     animation: ${Show} 1.3s ease-in;
@@ -152,13 +154,11 @@ const BtnHome = styled.button`
     }
 `;
 
-
 const Home = props => {
-
-const navigate = useNavigate();
-const handleClick =  ()=> { 
-    navigate('/menu');
-}
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate('/menu');
+    };
 
     return (
         <>

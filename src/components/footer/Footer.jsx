@@ -1,8 +1,7 @@
-import React from 'react'
+import React from 'react';
 //import PropTypes from 'prop-types'
 import styled from 'styled-components';
 import { devices } from '../../utils/constantes';
-
 
 const StyleFooter = styled.div`
     max-width: 100%;
@@ -46,7 +45,6 @@ const ContainerFooter = styled.div`
     align-items: center;
     justify-content: flex-start;
     gap: 2rem;
-
 `;
 
 const FooterSocialMedia = styled.div`
@@ -59,8 +57,8 @@ const FooterSocialMedia = styled.div`
 `;
 
 const Copyright = styled.div`
-text-align:center;
-margin: 0.5rem auto;
+    text-align: center;
+    margin: 0.5rem auto;
 `;
 
 const StyleCopyright = styled.span`
@@ -72,7 +70,6 @@ const StyleCopyright = styled.span`
         background: transparent;
     }
 `;
-
 
 const Footer = ({
     instagram,
@@ -102,6 +99,6 @@ const Footer = ({
     );
 };
 
-Footer.propTypes = {}
+Footer.propTypes = {};
 
-export default Footer
+export default Footer;

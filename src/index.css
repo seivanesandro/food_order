@@ -15,8 +15,8 @@ body {
     letter-spacing: 2px;
 
     scrollbar-color: transparent !important;
-        overflow-x: hidden !important;
-        overflow-y: auto !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
 }
 
 h1,
@@ -33,13 +33,54 @@ h6 {
     letter-spacing: 0.2rem;
 }
 
-p{
+p {
     font-optical-sizing: auto;
-        font-weight: 300;
-        font-style: normal;
-        margin: 0 1rem;
-        letter-spacing: 0.2rem;
+    font-weight: 300;
+    font-style: normal;
+    margin: 0 1rem;
+    letter-spacing: 0.2rem;
 }
+label{
+    font-family: 'Roboto Mono', monospace;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
+        margin: 1rem;
+        letter-spacing: 0.2rem;
+        color: #555 !important;
+}
+
+input{
+    font-family: 'Roboto Mono', monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    margin: 1rem auto;
+    letter-spacing: 0.1rem;
+    color: #555 !important;
+    text-align: center;
+}
+
+textarea{
+        font-family: 'Roboto Mono', monospace;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: 0.1rem;
+            color: #555 !important;
+            text-align: left;
+            outline: none;
+
+            margin: 1rem auto;
+            width: 198%;
+                height: 55px;
+                box-sizing: border-box;
+                border: 2px solid #ccc;
+                border-radius: 4px;
+                resize: none;
+}
+
+
 /*navbar*/
 .navoffcanvas {
     display: flex !important;
@@ -77,19 +118,20 @@ p{
 }
 
 /*footer*/
-.icon-style:hover{
+.icon-style:hover {
     color: rgb(70, 242, 248) !important;
     text-shadow: 0 0 0.1rem black;
 }
 
 /*home page*/
 
-
 /*breackpoints responsive*/
 @media only screen and (max-width: 2560px) {
+
 }
 
 @media only screen and (max-width: 1440px) {
+
 }
 
 @media only screen and (max-width: 1024px) {
@@ -102,70 +144,72 @@ p{
     }
 
     /*home*/
-    .home{
+    .home {
         height: 94.8vh !important;
     }
 }
 
 @media only screen and (max-width: 768px) {
     /*home*/
-        .home {
-            height: 94.8vh !important;
+    .home {
+        height: 94.8vh !important;
+    }
+        textarea {
+            width: 147%;
         }
 }
 
 @media only screen and (max-width: 430px) {
     /*footer*/
-        .icon-style {
-            width: 30px !important;
-        }
+    .icon-style {
+        width: 30px !important;
+    }
     /*home*/
-        .home {
-            height: 94.8vh !important;
-        }
+    .home {
+        height: 94.8vh !important;
+    }
 }
 
 @media only screen and (max-width: 425px) {
     /*footer*/
-        .icon-style {
-            width: 30px !important;
-        }
+    .icon-style {
+        width: 30px !important;
+    }
     /*home*/
-        .home {
-            height: 94.8vh !important;
-        }
+    .home {
+        height: 94.8vh !important;
+    }
 }
 
 @media only screen and (max-width: 375px) {
     /*globalstyles*/
     h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-
-            margin: 0;
-            letter-spacing: 0.1rem;
-        }
-         /*footer*/
-         .icon-style {
-             width: 30px !important;
-         }
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0;
+        letter-spacing: 0.1rem;
+    }
+    /*footer*/
+    .icon-style {
+        width: 30px !important;
+    }
     /*home*/
-        .home {
-            height: 94.8vh !important;
-        }
+    .home {
+        height: 94.8vh !important;
+    }
 }
 
 @media only screen and (max-width: 320px) {
     /*footer*/
     .icon-style {
-            width: 30px !important;
-        }
-    
+        width: 30px !important;
+    }
+
     /*home*/
-        .home {
-            height: 94.8vh !important;
-        }
+    .home {
+        height: 94.8vh !important;
+    }
 }

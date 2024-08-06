@@ -1,8 +1,10 @@
 import React from 'react';
 // PropTypes from 'prop-types'
-import {MenuList} from '../../data/MenuList';
+import { MenuList } from '../../data/MenuList';
 import CardMenu from '../../components/menuItems/MenuItems';
-import styled, { keyframes } from 'styled-components';
+import styled, {
+    keyframes
+} from 'styled-components';
 import { devices } from '../../utils/constantes';
 
 const Show = keyframes`
@@ -18,7 +20,6 @@ const Show = keyframes`
     }
 `;
 
-
 const StyledMenu = styled.div`
     /* max-width: 92%;
     width: 89%; */
@@ -31,7 +32,6 @@ const ContainerMenu = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 3rem;
-
 `;
 const MenuTitle = styled.h2`
     text-align: start;
@@ -43,20 +43,23 @@ const ContainerMenuList = styled.div`
     gap: 5rem;
     justify-content: flex-start;
     align-items: center;
-    margin-left: 5rem;
+    margin-left: 0rem;
     animation: ${Show} 1.5s ease-in;
 
     @media only screen and (${devices.fourk}) {
         margin-left: 5rem;
     }
     @media only screen and (${devices.portatilL}) {
+        margin-left: 14rem;
+    }
+    @media only screen and (${devices.portatilS}) {
         margin-left: 8rem;
     }
     @media only screen and (${devices.portatil}) {
-        margin-left: 4rem;
+        margin-left: 12rem;
     }
     @media only screen and (${devices.tablet}) {
-        margin-left: 6rem;
+        margin-left: 4.5rem;
     }
     @media only screen and (${devices.iphone14}) {
         margin-left: 5rem;
@@ -81,24 +84,21 @@ const Menu = props => {
                         Menu
                     </MenuTitle>
                     <ContainerMenuList className="menu-list">
-                        {MenuList.map((item)=>{
+                        {MenuList.map(item => {
                             return (
                                 <CardMenu
-                                        key={
-                                            item.id
-                                        }
-                                        imgurl={
-                                            item.image
-                                        }
-                                        cardtitle={
-                                            item.name
-                                        }
-                                        cardtext={
-                                            item.price
-                                        }
-                                    />
+                                    key={item.id}
+                                    imgurl={
+                                        item.image
+                                    }
+                                    cardtitle={
+                                        item.name
+                                    }
+                                    cardtext={
+                                        item.price
+                                    }
+                                />
                             );
-                            
                         })}
                     </ContainerMenuList>
                 </ContainerMenu>
