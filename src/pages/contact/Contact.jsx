@@ -77,14 +77,21 @@ const ContainerContactRightSide = styled.div`
         width: 90%;
     }
     @media only screen and (${devices.iphone14}) {
-        align-items: center;
-        margin: 1rem 2rem !important;
+        width: 84%;
+        align-items: baseline !important;
+        margin: 1rem auto !important;
     }
     @media only screen and (${devices.mobileG}) {
+        width: 84%;
+        margin: 1rem auto !important;
     }
     @media only screen and (${devices.mobileM}) {
+        width: 84%;
+        margin: 1rem auto !important;
     }
     @media only screen and (${devices.mobileP}) {
+        width: 84%;
+        margin: 1rem auto !important;
     }
 `;
 const StyledFormContact = styled.form`
