@@ -21,7 +21,7 @@ const StyleFooter = styled.div`
     color: #fff;
 
     @media only screen and (${devices.fourk}) {
-        height: 11vh !important;
+        height: 9vh !important;
     }
     @media only screen and (${devices.tablet}) {
         display: none;
@@ -90,7 +90,7 @@ const Footer = ({
                     </FooterSocialMedia>
                     <Copyright className="copyright">
                         <StyleCopyright className="copyright-style">
-                            sandroseivane©{year}
+                            sandroseivane - copyrights©{year}
                         </StyleCopyright>
                     </Copyright>
                 </ContainerFooter>

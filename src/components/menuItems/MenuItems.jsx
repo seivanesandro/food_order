@@ -1,11 +1,16 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { useNavigate } from 'react-router-dom';
 
 function CardMenu({
     imgurl,
     cardtitle,
     cardtext
 }) {
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate('/contact');
+    };
     return (
         <>
             <Card
@@ -40,7 +45,7 @@ function CardMenu({
                     </Card.Text>
                     <Button
                         variant="dark"
-                        disabled
+                        onClick={handleClick}
                     >
                         order now
                     </Button>

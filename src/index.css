@@ -40,46 +40,46 @@ p {
     margin: 0 1rem;
     letter-spacing: 0.2rem;
 }
-label{
+label {
     font-family: 'Roboto Mono', monospace;
-        font-optical-sizing: auto;
-        font-weight: 600;
-        font-style: normal;
-        margin: 1rem;
-        letter-spacing: 0.2rem;
-        color: #555 !important;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    margin: 0.5rem 0 0.1rem 0;
+    letter-spacing: 0.2rem;
+    color: #555 !important;
 }
 
-input{
+input {
     font-family: 'Roboto Mono', monospace;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    margin: 1rem auto;
+    margin: 0.1rem auto 1rem auto;
     letter-spacing: 0.1rem;
     color: #555 !important;
-    text-align: center;
+    text-align: justify;
 }
 
-textarea{
-        font-family: 'Roboto Mono', monospace;
-            font-optical-sizing: auto;
-            font-weight: 400;
-            font-style: normal;
-            letter-spacing: 0.1rem;
-            color: #555 !important;
-            text-align: left;
-            outline: none;
+textarea {
+    font-family: 'Roboto Mono', monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.1rem;
+    color: #555 !important;
+    text-align: left;
+    outline: none;
 
-            margin: 1rem auto;
-            width: 198%;
-                height: 55px;
-                box-sizing: border-box;
-                border: 2px solid #ccc;
-                border-radius: 4px;
-                resize: none;
+    margin: 1rem auto 2rem auto;
+    width: 119%;
+    height: 55px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+    text-align: justify;
 }
-
 
 /*navbar*/
 .navoffcanvas {
@@ -127,14 +127,31 @@ textarea{
 
 /*breackpoints responsive*/
 @media only screen and (max-width: 2560px) {
-
+    textarea {
+        width: 119%;
+    }
 }
 
 @media only screen and (max-width: 1440px) {
-
+    textarea {
+        width: 116%;
+    }
 }
 
 @media only screen and (max-width: 1024px) {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0;
+    }
+
+    textarea {
+        width: 157%;
+    }
+
     /*navbar*/
     .navoffcanvas {
         display: flex !important;
@@ -154,12 +171,15 @@ textarea{
     .home {
         height: 94.8vh !important;
     }
-        textarea {
-            width: 147%;
-        }
+    textarea {
+        width: 126%;
+    }
 }
 
 @media only screen and (max-width: 430px) {
+    textarea {
+        width: 108%;
+    }
     /*footer*/
     .icon-style {
         width: 30px !important;
@@ -171,6 +191,9 @@ textarea{
 }
 
 @media only screen and (max-width: 425px) {
+    textarea {
+        width: 108%;
+    }
     /*footer*/
     .icon-style {
         width: 30px !important;
@@ -192,6 +215,10 @@ textarea{
         margin: 0;
         letter-spacing: 0.1rem;
     }
+
+    textarea {
+        width: 110%;
+    }
     /*footer*/
     .icon-style {
         width: 30px !important;
@@ -203,6 +230,10 @@ textarea{
 }
 
 @media only screen and (max-width: 320px) {
+    textarea {
+        width: 150%;
+    }
+
     /*footer*/
     .icon-style {
         width: 30px !important;

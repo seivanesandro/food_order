@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 //import PropTypes from 'prop-types'
-import styled, { keyframes } from 'styled-components';
-import singlePiza from '../../assets/fooda.jpeg'
+import styled, {
+    keyframes
+} from 'styled-components';
+import singlePiza from '../../assets/fooda.jpeg';
 import { devices } from '../../utils/constantes';
+import Button from 'react-bootstrap/esm/Button';
+import { useNavigate } from 'react-router-dom';
 
 const Show = keyframes`
     0%{
@@ -21,7 +25,7 @@ const StyledContact = styled.div`
     width: 100%;
     height: 90vh;
     display: flex;
-    gap: 3rem;
+    gap: 3.8rem;
     flex-direction: row;
 
     @media only screen and (${devices.iphone14}) {
@@ -71,26 +75,30 @@ const ContainerContactRightSide = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 6rem;
-    margin: 5rem 1rem;
+    gap: 4rem;
+    margin: 5rem 1rem 0.5rem 1rem;
+
+    @media only screen and (${devices.portatil}) {
+        width: 22%;
+    }
     @media only screen and (${devices.tablet}) {
         width: 90%;
     }
     @media only screen and (${devices.iphone14}) {
-        width: 84%;
+        width: 63%;
         align-items: baseline !important;
         margin: 1rem auto !important;
     }
     @media only screen and (${devices.mobileG}) {
-        width: 84%;
+        width: 63%;
         margin: 1rem auto !important;
     }
     @media only screen and (${devices.mobileM}) {
-        width: 84%;
+        width: 69%;
         margin: 1rem auto !important;
     }
     @media only screen and (${devices.mobileP}) {
-        width: 84%;
+        width: 74%;
         margin: 1rem auto !important;
     }
 `;
@@ -98,13 +106,86 @@ const StyledFormContact = styled.form`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 50%;
-
-
+    gap: 1.3rem;
+    width: 43%;
+    @media only screen and (${devices.fourk}) {
+        width: 43%;
+    }
+    @media only screen and (${devices.portatilL}) {
+        width: 68%;
+    }
+    @media only screen and (${devices.portatilS}) {
+        width: 76%;
+    }
+    @media only screen and (${devices.portatil}) {
+        width: 68%;
+    }
+    @media only screen and (${devices.tablet}) {
+        width: 64%;
+    }
+    @media only screen and (${devices.iphone14}) {
+        width: 71%;
+    }
+    @media only screen and (${devices.mobileG}) {
+        width: 71%;
+    }
+    @media only screen and (${devices.mobileM}) {
+        width: 74%;
+    }
+    @media only screen and (${devices.mobileP}) {
+        width: 58%;
+    }
 `;
 
+const StyleError = styled.span`
+    font-size: 0.7rem !important;
+    color: red !important;
+    font-weight: 600;
+    text-shadow: 0 0 0.1rem red !important;
+    width: 15rem !important;
+    text-align: center;
+    margin-bottom: 1.5rem !important;
+`;
 
-const Contact = (props) => {
+const Contact = props => {
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
+
+    const [error, setError] = useState(false);
+
+    const validateName = new RegExp(
+        '^[a-zA-Z]+( [a-zA-Z0-9_]+)*$'
+    );
+    const validatePhone = new RegExp(
+        '^[(]?[0-9]{3}[)]?[0-9]{3}?[0-9]{4,6}$'
+    );
+
+    const navigate = useNavigate();
+
+    const validate = e => {
+        e.preventDefault();
+
+        if (!validateName.test(name)) {
+            setError(true);
+        } else {
+            setError(false);
+            navigate('/');
+        }
+
+        if (!validatePhone.test(phone)) {
+            setError(true);
+        } else {
+            setError(false);
+            navigate('/');
+            alert(
+                'we will contact you soon as possible'
+            );
+        }
+    };
+
+    const handleClick = () => {
+        validate();
+    };
     return (
         <>
             <StyledContact className="contact">
@@ -117,21 +198,63 @@ const Contact = (props) => {
                         method="POST"
                         id="contact-form"
                         className="contact-form"
+                        onSubmit={handleClick}
                     >
-                        <label htmlFor="name">Name</label>
+                        <label htmlFor="name">
+                            Name
+                        </label>
                         <input
                             type="text"
                             className="forms-input"
-                            name='name'
+                            placeholder="name"
+                            name="name"
+                            value={name}
+                            onChange={e =>
+                                setName(
+                                    e.target.value
+                                )
+                            }
                         />
-                        <label htmlFor="email">E-mail</label>
+                        <label htmlFor="phone">
+                            Phone
+                        </label>
                         <input
                             type="text"
                             className="forms-input"
-                            name='email'
+                            placeholder="+351xxxxxxxxx"
+                            name="phone"
+                            value={phone}
+                            onChange={e =>
+                                setPhone(
+                                    e.target.value
+                                )
+                            }
                         />
-                        <label htmlFor="message">Message</label>
-                        <textarea rows={6} cols={1} name="message" id="message" required></textarea>
+
+                        <label htmlFor="message">
+                            Message
+                        </label>
+
+                        <textarea
+                            rows={6}
+                            cols={1}
+                            name="message"
+                            id="message"
+                            placeholder="optional info..."
+                            required
+                        ></textarea>
+                        {error && (
+                            <StyleError className="error">
+                                Please fill the
+                                form correctly!
+                            </StyleError>
+                        )}
+                        <Button
+                            variant="dark"
+                            onClick={validate}
+                        >
+                            order now
+                        </Button>
                     </StyledFormContact>
                 </ContainerContactRightSide>
             </StyledContact>
